@@ -1,0 +1,64 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./client/index.html",
+    "./client/src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+        },
+        accent: {
+          neon: '#26c6da', // cyan glow accent
+          soft: '#00acc1', // soft aqua
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      boxShadow: {
+        glow: '0 0 20px rgba(59, 130, 246, 0.6)', // neon blue glow
+        glass: '0 4px 30px rgba(0, 0, 0, 0.1)',   // subtle glass shadow
+      },
+      backdropBlur: {
+        xs: '2px',
+        sm: '6px',
+      },
+      backgroundImage: {
+        'gradient-blue': 'linear-gradient(135deg, #42a5f5, #00acc1, #26c6da)',
+        'gradient-glow': 'radial-gradient(circle at top left, #42a5f5, #26c6da, #1e3a8a)',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+        'slide-up': 'slideUp 0.3s ease-out',
+        'pulse-glow': 'pulseGlow 2s infinite ease-in-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(10px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        pulseGlow: {
+          '0%, 100%': { boxShadow: '0 0 15px rgba(59, 130, 246, 0.7)' },
+          '50%': { boxShadow: '0 0 25px rgba(59, 130, 246, 1)' },
+        },
+      },
+    },
+  },
+  plugins: [],
+}
